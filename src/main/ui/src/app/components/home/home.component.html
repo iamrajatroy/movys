@@ -1,0 +1,75 @@
+<div class="container-fluid" style="margin-top: 50px; background-color: #18191a;">
+    <div *ngIf="movies.length == 0 else movie">
+        <h3 style="color: white;"> Loading Movies... </h3>
+    </div>
+
+    <ng-template #movie>
+        <cdk-virtual-scroll-viewport itemSize="100" style="height: 1000px;">
+            <div class="container" style="background-color: #18191a;">
+                <div class="row">
+                    <!-- <div class="col-md-6" *cdkVirtualFor="let movie of movies" style="height: 300px;"> -->
+                    <div class="col-md-6" *cdkVirtualFor="let movie of movies | movieFilter:searchTerm"
+                        style="max-height: fit-content;">
+                        <!-- <table class="table">
+                            <tbody>
+                                <td style="width: fit-content; "><img src="{{movie.posterPath}}" alt="poster"></td>
+                                <td >
+                                    <tr >
+                                        <b>{{movie.originalTitle}}</b>
+                                        <br>
+                                        <p style="font-size: small;">{{movie.genres}}</p>
+                                    </tr>
+                                    <tr >
+                                        <p style="font-size: small; ">{{movie.overview}}</p>
+                                    </tr>
+
+                                    <tr >
+                                        <div *ngIf="!isLiked(movie) else liked">
+                                            <button (click)="hitLike(movie)" class="btn btn-outline-dark"
+                                                style="position: absolute; bottom: 0; margin-bottom: 28px;">Like</button>
+                                        </div>
+                                        <ng-template #liked>
+
+                                            <button class="btn btn-outline-dark"
+                                                style="position: absolute; bottom: 0; margin-bottom: 28px; color: #a7aaae; background-color: #3a3b3c;"
+                                                disabled>Liked</button>
+                                        </ng-template>
+                                    </tr>
+                                </td>
+                            </tbody>
+                        </table> -->
+                        <div class="card" style="background-color: #18191a; color: white;">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <img src="{{movie.posterPath}}" alt="poster" style="width: fit-content;">
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <h5 class="row card-title">{{movie.originalTitle}}</h5>
+                                        <p class="row card-text">{{movie.genres}} </p>
+                                        <p class="row card-text" style="font-size: small;">{{movie.overview}}</p>
+                                        <div class="row card-footer" *ngIf="!isLiked(movie) else liked"
+                                            style="float: right; margin-right: 50px;">
+                                            <button (click)="hitLike(movie)" class="btn btn-outline-dark"
+                                                style="position: absolute; bottom: 0; float: right; ">Like</button>
+                                        </div>
+                                        <ng-template #liked>
+                                            <div class="row card-footer" style="float: right; margin-right: 50px;">
+                                                <button class="btn btn-outline-dark"
+                                                    style="position: absolute;  bottom: 0; color: #a7aaae; background-color: #3a3b3c;"
+                                                    disabled>Liked</button>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </cdk-virtual-scroll-viewport>
+    </ng-template>
+</div>

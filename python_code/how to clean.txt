@@ -1,0 +1,1 @@
+1. After downloading the data from tmbd.2. Import to Google sheets3. Remove movies with no genres4. While saving check that no column overlapping is there. for example overview and data column shifted due to delimiter present in the text.

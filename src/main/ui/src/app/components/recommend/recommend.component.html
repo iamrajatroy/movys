@@ -1,0 +1,59 @@
+<div class="container-fluid" style="margin-top: 56px; background-color: #18191a;">
+    <div *ngIf="movies.length == 0 else movie" style="height: 1000px;">
+        <h3 style="color: white;"> Like some movies. Recommendations will show here. </h3>
+    </div>
+
+    <ng-template #movie>
+        <div class="container" style="background-color: #18191a;">
+
+            <div *ngFor="let movie of movies">
+                <h5>Similar to <b>{{movie.likedMovieName}}</b></h5>
+
+                <div class="container" style="background-color: #18191a;">
+                    <div class="row">
+                        <div class="col-md-6" *ngFor="let similarMovie of movie.dbMovie">
+                            <!-- <table class="table">
+                                <tbody>
+                                    <td style="width: fit-content; "><img src="{{similarMovie.posterPath}}" alt="poster"></td>
+                                    <td>
+                                        <tr>
+                                            <b>{{similarMovie.originalTitle}}</b>
+                                            <br>
+                                            <p style="font-size: small;">{{similarMovie.genres}}</p>
+                                        </tr>
+                                        <tr style="overflow: hidden;">
+                                            <p style="font-size: small; ">{{similarMovie.overview}}</p>
+                                        </tr>
+                                    </td>
+                                </tbody>
+                            </table> -->
+
+                            <div class="card" style="background-color: #18191a; color: white;">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <img src="{{similarMovie.posterPath}}" alt="poster"
+                                                style="width: fit-content;">
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <h5 class="row card-title">{{similarMovie.originalTitle}}</h5>
+                                            <p class="row card-text">{{similarMovie.genres}}</p>
+                                            <p class="row card-text" style="font-size: small;">{{similarMovie.overview}}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </ng-template>
+</div>
