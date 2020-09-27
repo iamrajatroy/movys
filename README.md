@@ -14,7 +14,7 @@ This is a movie recommender application. It recommends similar movies to the mov
 - The UI is developed with Angular and is coupled with the Spring Boot Application using Spring Thymeleaf.
 - All movies and user-liked movies are stored with the help of in-memory db served by Apache Derby.
 
-The overall movies data is downloaded from https://www.themoviedb.org/ using TMDb Developer API.
+Data used in this application is downloaded from https://www.themoviedb.org/ using TMDb Developer API.
 
 
 # Credits
