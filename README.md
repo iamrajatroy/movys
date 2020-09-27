@@ -2,4 +2,6 @@
 
 Movie recommendation app using content-based filtering. Data provided by TMDb.
 
-![movys demo](demo/movys_demo.gif)
+
+# Demo
+![movys demo](demo/movys-demo.gif)
