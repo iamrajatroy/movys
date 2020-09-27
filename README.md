@@ -15,3 +15,9 @@ This is a movie recommender application. It recommends similar movies to the mov
 - All movies and user-liked movies are stored with the help of in-memory db served by Apache Derby.
 
 The overall movies data is downloaded from https://www.themoviedb.org/ using TMDb Developer API.
+
+
+# Credits
+Inspired by the work of <b>Dean Sublett</b>
+
+Read the blog - https://towardsdatascience.com/beginners-recommendation-systems-with-python-ee1b08d2efb6
