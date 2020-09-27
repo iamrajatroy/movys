@@ -16,6 +16,38 @@ This is a movie recommender application. It recommends similar movies to the mov
 
 Data used in this application is downloaded from https://www.themoviedb.org/ using TMDb Developer API.
 
+# Get the data
+
+- <b>curl</b>
+
+curl --location --request GET 'http://api.themoviedb.org/3/discover/movie?api_key=ADD_YOUR_API_KEY_HERE'
+
+- <b>Python client</b>
+
+<pre>
+import requests
+
+url = "http://api.themoviedb.org/3/discover/movie?api_key=ADD_YOUR_API_KEY_HERE"
+
+payload = {}
+headers= {}
+
+response = requests.request("GET", url, headers=headers, data = payload)
+
+print(response.text.encode('utf8'))
+</pre>
+
+- <b>Java client</b>
+
+<pre>
+OkHttpClient client = new OkHttpClient().newBuilder().build();
+Request request = new Request.Builder()
+  .url("http://api.themoviedb.org/3/discover/movie?api_key=ADD_YOUR_API_KEY_HERE")
+  .method("GET", null)
+  .build();
+Response response = client.newCall(request).execute();
+</pre>
+
 
 # Credits
 Inspired by the work of <b>Dean Sublett</b>
