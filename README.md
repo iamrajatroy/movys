@@ -48,6 +48,10 @@ Request request = new Request.Builder()
 Response response = client.newCall(request).execute();
 </pre>
 
+# Architecture
+
+![](architechture.jpg)
+
 
 # Credits
 Inspired by the work of <b>Dean Sublett</b>
